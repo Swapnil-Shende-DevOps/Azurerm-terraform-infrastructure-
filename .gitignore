@@ -1,0 +1,5 @@
+.terraform
+.gitleaks.toml
+.terraform.lock.hcl
+tfplan.binary
+report.json
