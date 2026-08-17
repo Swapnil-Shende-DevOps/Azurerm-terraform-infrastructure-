@@ -3,6 +3,10 @@ rgs = {
     name     = "prod-rg"
     location = "eastus"
   }
+   rg2 = {
+    name     = "prod-rg2"
+    location = "eastus"
+  }
 }
 
 vnet = {
