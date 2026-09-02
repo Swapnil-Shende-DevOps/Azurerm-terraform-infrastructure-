@@ -2,16 +2,13 @@ module "resource_group" {
   source = "../modules/Azurerm_resource_group"
   rgs    = var.rgs
 }
-
-module "virtual_network" {
-  depends_on = [module.resource_group]
-  source     = "../modules/Azurerm_virtual_network"
-  vnet       = var.vnet
-}
-
-module "subnet" {
-  depends_on = [module.virtual_network]
-  source     = "../modules/Azurerm_subnet"
-  subnet     = var.subnet
+module "Storage_account" {
+  depends_on =[module.resource_group]
+  source = "../modules/stg"
+ stg  = var.stg
+ location = var.location
+ RG = var.RG
+  account_tier = var.account_tier
+account_replication_type =var.account_replication_type
 }
 

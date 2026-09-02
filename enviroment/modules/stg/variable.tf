@@ -1,4 +1,3 @@
-variable "rgs" {}
 variable "stg" {}
 variable "location" {}
 variable "RG" {}
