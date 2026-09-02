@@ -4,5 +4,3 @@ rgs = {
     location = "eastus"
   }
 }
-
-
