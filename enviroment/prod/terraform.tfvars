@@ -1,6 +1,6 @@
 rgs = {
   rg1 = {
-    name     = "prod-rg"
+    name     = "swap-rg"
     location = "eastus"
   }
 }
