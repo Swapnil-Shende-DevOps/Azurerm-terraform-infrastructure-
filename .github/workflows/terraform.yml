@@ -19,10 +19,15 @@ jobs:
         working-directory: enviroment/prod
 
     env:
-      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID || fromJSON(secrets.AZURE_CREDENTIALS).clientId }}
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET || fromJSON(secrets.AZURE_CREDENTIALS).clientSecret }}
-      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID || fromJSON(secrets.AZURE_CREDENTIALS).subscriptionId }}
-      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID || fromJSON(secrets.AZURE_CREDENTIALS).tenantId }}
+      ARM_CLIENT_ID: ${{ fromJSON(secrets.AZURE_CREDENTIALS).clientId }}
+      ARM_CLIENT_SECRET: ${{ fromJSON(secrets.AZURE_CREDENTIALS).clientSecret }}
+      ARM_SUBSCRIPTION_ID: ${{ fromJSON(secrets.AZURE_CREDENTIALS).subscriptionId }}
+      ARM_TENANT_ID: ${{ fromJSON(secrets.AZURE_CREDENTIALS).tenantId }}
+      TF_VAR_stg: ${{ fromJSON(secrets.AZURE_CREDENTIALS).stg }}
+      TF_VAR_location: ${{ fromJSON(secrets.AZURE_CREDENTIALS).location }}
+      TF_VAR_RG: ${{ fromJSON(secrets.AZURE_CREDENTIALS).RG }}
+      TF_VAR_account_tier: ${{ fromJSON(secrets.AZURE_CREDENTIALS).account_tier }}
+      TF_VAR_account_replication_type: ${{ fromJSON(secrets.AZURE_CREDENTIALS).account_replication_type }}
       ARM_USE_CLI: false
 
     steps:
